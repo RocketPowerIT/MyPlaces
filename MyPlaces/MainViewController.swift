@@ -7,36 +7,60 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainViewController: UITableViewController {
 
 
     
-    let places = Place.getPlaces()
+    var places: Results<Place>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        places = realm.objects(Place.self)
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return places.count
+        return places.isEmpty ? 0 : places.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        let place = places[indexPath.row]
         
-        cell.nameLabel?.text = places[indexPath.row].name
-        cell.locationLabel.text = places[indexPath.row].location
-        cell.typeLabel.text = places[indexPath.row].type
+        cell.nameLabel?.text = place.name
+        cell.locationLabel.text = place.location
+        cell.typeLabel.text = place.type
+        cell.imageOfPlaces.image = UIImage(data: place.imageData!)
         
-        cell.imageOfPlaces?.image = UIImage(named: places[indexPath.row].image)
         cell.imageOfPlaces?.layer.cornerRadius = cell.imageOfPlaces.frame.size.height / 2
         cell.imageOfPlaces?.clipsToBounds = true
         return cell
+    }
+    
+    //MARK: Table View Delegate
+  
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let place = places[indexPath.row]
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _) in
+//        //            StorageManager.deleteObject(place)
+//        //            tableView.deleteRows(at: [indexPath], with: .automatic)
+//        //        }
+//    }
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        let place = places[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+            StorageManager.deleteObject(place)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+
+        return [deleteAction]
     }
     
     /*
@@ -49,8 +73,10 @@ class MainViewController: UITableViewController {
     }
     */
     
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue){
-        
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
+        guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
+        newPlaceVC.saveNewPlace()
+        tableView.reloadData()
     }
 
 }
