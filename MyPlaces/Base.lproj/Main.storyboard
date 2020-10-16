@@ -185,9 +185,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bn1-fi-6rl">
-                                <rect key="frame" x="0.0" y="126" width="414" height="770"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bn1-fi-6rl">
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="AeD-vB-6CN" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
@@ -251,25 +250,33 @@
                                     <outlet property="delegate" destination="g9w-RA-S2f" id="p5f-f1-M3z"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="m5s-ZI-Rag">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m5s-ZI-Rag">
                                 <rect key="frame" x="0.0" y="88" width="414" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
                                 </segments>
                                 <connections>
-                                    <action selector="sortSelection:" destination="g9w-RA-S2f" eventType="valueChanged" id="3sl-As-aEU"/>
+                                    <action selector="sortSelection:" destination="g9w-RA-S2f" eventType="valueChanged" id="nEy-Cy-c3Z"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="m5s-ZI-Rag" firstAttribute="leading" secondItem="9wI-qs-Pdt" secondAttribute="leading" id="3KX-Ri-lJo"/>
+                            <constraint firstItem="bn1-fi-6rl" firstAttribute="leading" secondItem="9wI-qs-Pdt" secondAttribute="leading" id="Icp-H7-uJj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bn1-fi-6rl" secondAttribute="bottom" constant="-34" id="S2p-gi-xer"/>
+                            <constraint firstItem="m5s-ZI-Rag" firstAttribute="top" secondItem="9wI-qs-Pdt" secondAttribute="top" id="hRr-Sd-2TX"/>
+                            <constraint firstItem="bn1-fi-6rl" firstAttribute="top" secondItem="m5s-ZI-Rag" secondAttribute="bottom" constant="1" id="mQP-hT-DkW"/>
+                            <constraint firstItem="m5s-ZI-Rag" firstAttribute="trailing" secondItem="9wI-qs-Pdt" secondAttribute="trailing" id="x2c-iN-ooz"/>
+                            <constraint firstItem="bn1-fi-6rl" firstAttribute="trailing" secondItem="9wI-qs-Pdt" secondAttribute="trailing" id="yXS-SQ-249"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9wI-qs-Pdt"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="FCc-rb-zvm">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Umg-PF-XFk">
                             <connections>
-                                <action selector="reverstSorting:" destination="g9w-RA-S2f" id="NrU-MU-IcH"/>
+                                <action selector="reverstSorting:" destination="g9w-RA-S2f" id="a2H-XJ-Xl5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mwa-Yc-c7u">
@@ -279,8 +286,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="reverstSorting" destination="Umg-PF-XFk" id="aai-ZT-7QZ"/>
-                        <outlet property="segmentControll" destination="m5s-ZI-Rag" id="ycb-GK-ROZ"/>
+                        <outlet property="reverstSorting" destination="Umg-PF-XFk" id="W7y-Cb-3pd"/>
+                        <outlet property="segmentControll" destination="m5s-ZI-Rag" id="bX6-bj-JMW"/>
                         <outlet property="tableView" destination="bn1-fi-6rl" id="rvy-BM-QvD"/>
                     </connections>
                 </viewController>
