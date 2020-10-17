@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="51m-G9-7Zw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,35 +222,61 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="o4J-ER-wLj">
-                                                    <rect key="frame" x="88" y="8" width="310" height="69"/>
+                                                    <rect key="frame" x="88" y="8" width="178" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKb-uC-PxP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="178" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-dr-kPM">
-                                                            <rect key="frame" x="0.0" y="27.5" width="310" height="20"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="178" height="20"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-wy-TDZ">
-                                                            <rect key="frame" x="0.0" y="50.5" width="310" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50.5" width="178" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cR0-I5-wcg">
+                                                    <rect key="frame" x="274" y="21" width="128" height="43"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyStar" translatesAutoresizingMaskIntoConstraints="NO" id="OVq-ym-T9G">
+                                                            <rect key="frame" x="0.0" y="0.0" width="25.5" height="43"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyStar" translatesAutoresizingMaskIntoConstraints="NO" id="wfV-OZ-rOr">
+                                                            <rect key="frame" x="25.5" y="0.0" width="25.5" height="43"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyStar" translatesAutoresizingMaskIntoConstraints="NO" id="xow-ms-UfY">
+                                                            <rect key="frame" x="51" y="0.0" width="26" height="43"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyStar" translatesAutoresizingMaskIntoConstraints="NO" id="1TL-5a-1Vy">
+                                                            <rect key="frame" x="77" y="0.0" width="25.5" height="43"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyStar" translatesAutoresizingMaskIntoConstraints="NO" id="PjJ-zz-sTY">
+                                                            <rect key="frame" x="102.5" y="0.0" width="25.5" height="43"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="128" id="fnv-HF-LeF"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="o4J-ER-wLj" firstAttribute="leading" secondItem="hfG-tn-w6f" secondAttribute="trailing" constant="8" id="3Q4-No-ygO"/>
                                                 <constraint firstItem="hfG-tn-w6f" firstAttribute="centerY" secondItem="AFT-uG-IJc" secondAttribute="centerY" id="889-oC-GwA"/>
                                                 <constraint firstItem="hfG-tn-w6f" firstAttribute="leading" secondItem="AFT-uG-IJc" secondAttribute="leading" constant="15" id="Neb-Nx-JNJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="cR0-I5-wcg" secondAttribute="bottom" constant="21" id="OBz-QO-mh5"/>
                                                 <constraint firstAttribute="bottom" secondItem="o4J-ER-wLj" secondAttribute="bottom" constant="8" id="TFz-H0-3w9"/>
-                                                <constraint firstAttribute="trailing" secondItem="o4J-ER-wLj" secondAttribute="trailing" constant="16" id="bhP-B0-4vl"/>
+                                                <constraint firstItem="cR0-I5-wcg" firstAttribute="centerY" secondItem="AFT-uG-IJc" secondAttribute="centerY" id="UTm-Np-lKN"/>
+                                                <constraint firstItem="cR0-I5-wcg" firstAttribute="leading" secondItem="o4J-ER-wLj" secondAttribute="trailing" constant="8" id="coK-u3-U2G"/>
+                                                <constraint firstItem="cR0-I5-wcg" firstAttribute="trailing" secondItem="AFT-uG-IJc" secondAttribute="trailingMargin" constant="8" id="fj0-RA-fkf"/>
                                                 <constraint firstItem="o4J-ER-wLj" firstAttribute="top" secondItem="AFT-uG-IJc" secondAttribute="top" constant="8" id="kPY-9D-HdF"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -258,6 +284,7 @@
                                             <outlet property="imageOfPlaces" destination="hfG-tn-w6f" id="RbH-eP-Wj9"/>
                                             <outlet property="locationLabel" destination="xF8-dr-kPM" id="KpS-T5-Pht"/>
                                             <outlet property="nameLabel" destination="dKb-uC-PxP" id="0tP-81-xQ1"/>
+                                            <outlet property="ratingSV" destination="cR0-I5-wcg" id="zFe-5A-Fli"/>
                                             <outlet property="typeLabel" destination="cPe-wy-TDZ" id="X1P-wZ-gHk"/>
                                             <segue destination="92A-Ik-1ow" kind="show" identifier="showDetail" id="5D4-Gb-fKK"/>
                                         </connections>
@@ -354,6 +381,7 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="510" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5D4-Gb-fKK"/>

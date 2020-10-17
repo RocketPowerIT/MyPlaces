@@ -14,4 +14,5 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var ratingSV: UIStackView!
 }

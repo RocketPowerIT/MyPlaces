@@ -15,18 +15,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private var places: Results<Place>!
     private var filteredPlaces: Results<Place>!
     private var ascendingSorting = true
+    private var ratingStar = [UIImageView]()
+    
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false}
         return text.isEmpty
-            
         }
+    
     private var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
-    }
+        }
     
     @IBOutlet var reverstSorting: UIBarButtonItem!
     @IBOutlet var segmentControll: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var ratingSV: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +74,29 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.imageOfPlaces?.layer.cornerRadius = cell.imageOfPlaces.frame.size.height / 2
         cell.imageOfPlaces?.clipsToBounds = true
+        
+        
+        let rating = Int(place.rating)
+        let emptyStar = #imageLiteral(resourceName: "emptyStar")
+        let fillStar = #imageLiteral(resourceName: "filledStar")
+        
+        for star in cell.ratingSV.arrangedSubviews{
+            ratingStar.append(star as! UIImageView)
+        }
+        
+        let maxStar = 5
+        
+        for i in 0..<maxStar {
+            if i<rating {
+                 ratingStar[i].image = fillStar
+            }else{
+                ratingStar[i].image = emptyStar
+            }
+        }
+        ratingStar.removeAll()
+      
         return cell
+        
     }
     
     //MARK: Table View Delegate
@@ -121,7 +147,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
-    
     @IBAction func reverstSorting(_ sender: Any) {
         
         print("reverstSorting func")
@@ -160,4 +185,12 @@ extension MainViewController: UISearchResultsUpdating{
         filteredPlaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[C] %@", searchText, searchText)
         tableView.reloadData()
     }
+}
+
+ //MARK: set rating
+
+extension MainViewController {
+    
+    
+    
 }
