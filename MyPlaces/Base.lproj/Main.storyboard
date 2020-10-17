@@ -144,6 +144,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="ubJ-he-dQO">
+                                        <rect key="frame" x="0.0" y="503" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ubJ-he-dQO" id="fX0-Wh-TcK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NQ7-6l-QkK" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NQ7-6l-QkK" firstAttribute="centerX" secondItem="fX0-Wh-TcK" secondAttribute="centerX" id="gTp-Se-x8l"/>
+                                                <constraint firstItem="NQ7-6l-QkK" firstAttribute="centerY" secondItem="fX0-Wh-TcK" secondAttribute="centerY" id="yh3-zM-Q0k"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -169,6 +186,7 @@
                         <outlet property="placeLocation" destination="XkI-Mf-ccB" id="t7z-Qh-xj1"/>
                         <outlet property="placeName" destination="gIs-wb-qiN" id="gkG-47-NGA"/>
                         <outlet property="placeType" destination="YW4-Du-EqU" id="q80-kI-7Cz"/>
+                        <outlet property="ratingControl" destination="NQ7-6l-QkK" id="94Z-Pj-P8D"/>
                         <outlet property="saveButton" destination="cjB-Hl-poG" id="XdM-bk-u8o"/>
                     </connections>
                 </tableViewController>

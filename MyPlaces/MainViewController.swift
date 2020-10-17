@@ -82,6 +82,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        //            tableView.deleteRows(at: [indexPath], with: .automatic)
 //        //        }
 //    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
         let place = places[indexPath.row]
@@ -156,6 +160,4 @@ extension MainViewController: UISearchResultsUpdating{
         filteredPlaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[C] %@", searchText, searchText)
         tableView.reloadData()
     }
-    
-    
 }
